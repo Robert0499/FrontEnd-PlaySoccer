@@ -1,0 +1,31 @@
+<div class="container mt-5">
+	<div class="row d-flex align-items-center justify-content-center">
+		<div class="col-6 ">
+			<div class="card">
+				<h3 class="card-title text-primary ml-3 mt-2">Login</h3>
+				<div class="card-body">
+					<form ng-submit="login()">
+						<div class="form-group">
+							<label>Tipo documento</label>
+							<select class="form-control" required ng-model="usuario.fk_id_tpd">
+								<option hidden value="">Seleccione el tipo de documento</option>
+								<option ng-repeat="date in array" value="{{date.id}}">{{date.nombre}}</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Usuario: </label>
+							<input type="number" class="form-control" placeholder="Numero de documento" required ng-model="usuario.numero_documento">
+						</div>
+						<div class="form-group">
+							<label>Contraseña</label>
+							<input type="password" class="form-control" placeholder="Ingrese su contraseña" required ng-model="usuario.password">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

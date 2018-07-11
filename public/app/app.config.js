@@ -29,5 +29,7 @@
     state($stateProvider, 'invitado');
     state($stateProvider, 'inicioInvitado');
     state($stateProvider, 'infoPartido');
+    state($stateProvider, 'login');
+    state($stateProvider, 'principal');
   }
 })();
