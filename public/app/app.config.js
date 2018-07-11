@@ -26,6 +26,8 @@
     };
 
     $urlRouterProvider.otherwise('/');
-    state($stateProvider, 'login');
+    state($stateProvider, 'invitado');
+    state($stateProvider, 'inicioInvitado');
+    state($stateProvider, 'infoPartido');
   }
 })();
