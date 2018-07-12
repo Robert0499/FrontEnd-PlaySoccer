@@ -10,16 +10,18 @@
 			<div>
 				<img src="{{equipo.escudo}}" height="150" width="150" class="mt-3">
 				<h5>{{equipo.nombre}}</h5>
+			</div>
+			<div class="row">
 				<div class="col-6">
 					<h3>Jugador</h3>
 					<ul class="list-group">
-						<li class="list-group-item" ng-repeat="jugadores in jugadores">{{jugadores.nombre}}</li>
+						<li class="list-group-item letra" ng-repeat="jugadores in jugadores">{{jugadores.nombre}}</li>
 					</ul>
 				</div>
 				<div class="col-6">
 					<h3>Posicion</h3>
 					<ul class="list-group">
-						<li class="list-group-item" ng-repeat="posicion in jugadores">{{posicion.fk_id_rol_posicion}}</li>
+						<li class="list-group-item letra" ng-repeat="posicion in jugadores">{{posicion.posiciones}}</li>
 					</ul>
 				</div>
 			</div>

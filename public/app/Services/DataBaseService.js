@@ -21,8 +21,10 @@
     this.getJugadores = id => {
       return $http({
         method: 'GET',
-        url: host + 'jugadores/equipo?id=' + id
+        url: host + 'jugadores/equipo?id=' + id,
+        //params: { id }
       });
+    };
     this.GetRolPosicion = () => {
       return $http.get(host + 'rolposicion');
     };

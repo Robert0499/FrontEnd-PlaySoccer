@@ -33,11 +33,8 @@
     state($stateProvider, 'principal');
     state($stateProvider, 'equipos');
     state($stateProvider, 'equipo');
-<<<<<<< HEAD
     state($stateProvider, 'posiciones');
-=======
     state($stateProvider, 'OctavosFinal');
     state($stateProvider, 'dashboard');
->>>>>>> 88b29f5a9480a28539a3ed683b393be001d4bf2d
   }
 })();

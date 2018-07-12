@@ -1,9 +1,19 @@
 .letra {
-  font-size: 12px;
+  font-size: 14px;
 }
 .cursor {
   cursor: pointer;
 }
 .padding {
   padding: 0;
+}
+
+.list-group > li:last-child {
+  margin-bottom: 20px;
+}
+.letras {
+  font-size: 10px;
+}
+.noborder {
+  border: 0px;
 }

@@ -1,8 +1,8 @@
 angular
   .module('playsoccer', [])
   .controller('posicionesController', posicionesController);
-posicionesController.$inject = ['$scope', '$state'];
-function posicionesController($scope, $state) {
+posicionesController.$inject = ['$scope', '$state', 'DataBaseService'];
+function posicionesController($scope, $state, DataBaseService) {
   $scope.inicioInvitado = function() {
     $state.go('inicioInvitado');
   };
