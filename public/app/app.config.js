@@ -25,7 +25,7 @@
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     };
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
     state($stateProvider, 'invitado');
     state($stateProvider, 'inicioInvitado');
     state($stateProvider, 'infoPartido');

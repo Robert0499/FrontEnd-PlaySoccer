@@ -15,5 +15,8 @@
         $httpParamSerializerJQLike(data)
       );
     };
+    this.Getequipos = () => {
+      return $http.get(host + 'equipo');
+    };
   }
 })();
