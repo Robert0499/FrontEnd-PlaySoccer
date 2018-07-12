@@ -1,0 +1,60 @@
+<nav class="nav navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#zone">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="zone">
+			<i class="fa fa-futbol-o fa-4x "></i>
+			<a class="navbar-brand ml-1 mt-2" style="color: #36FF26">
+				<h2>Play Soccer</h2>
+			</a>
+			<form class="form-row aling-items-center w-100 justify-content-end 	">
+				<i class="fa fa-user fa-4x " style="color: white;"></i>
+				<div class="form-group ml-1 mt-4">
+					<div class="dropdown">
+						<button class="btn btn-outline-info  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+						 aria-expanded="false">
+							Administrador
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" style="cursor: pointer;" ng-click="reset()">Cerrar Sesion</a>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</nav>
+
+<div class="container mt-5">
+	<div class="row d-flex align-items-center justify-content-center">
+		<div class="col-6 ">
+			<div class="card">
+				<h3 class="card-title text-primary ml-3 mt-2">Registro Delegados</h3>
+				<div class="card-body">
+					<form ng-submit="Registro()">
+						<div class="form-group">
+							<label>Tipo documento</label>
+							<select class="form-control" required ng-model="usuario.fk_id_tpd">
+								<option hidden value="">Seleccione el tipo de documento</option>
+								<option ng-repeat="date in array" value="{{date.id}}">{{date.nombre}}</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Usuario: </label>
+							<input type="number" class="form-control" placeholder="Numero de documento" required ng-model="usuario.numero_documento">
+						</div>
+						<div class="form-group">
+							<label>Contraseña</label>
+							<input type="password" class="form-control" placeholder="Ingrese su contraseña" required ng-model="usuario.password">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-block">Registrar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -25,7 +25,7 @@
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     };
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/inicioInvitado');
     state($stateProvider, 'invitado');
     state($stateProvider, 'inicioInvitado');
     state($stateProvider, 'infoPartido');
@@ -33,5 +33,7 @@
     state($stateProvider, 'principal');
     state($stateProvider, 'equipos');
     state($stateProvider, 'equipo');
+    state($stateProvider, 'OctavosFinal');
+    state($stateProvider, 'dashboard');
   }
 })();

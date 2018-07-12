@@ -18,5 +18,18 @@
     this.Getequipos = () => {
       return $http.get(host + 'equipo');
     };
+    this.GetRolPosicion = () => {
+      return $http.get(host + 'rolposicion');
+    };
+    this.AddJugador = data => {
+      return $http.post(host + 'jugador', $httpParamSerializerJQLike(data));
+    };
+
+    this.RegisterPartido = () => {
+      return $http.get(host + 'partidos/verify');
+    };
+    this.Administrador = data => {
+      return $http.post(host + 'usuario', $httpParamSerializerJQLike(data));
+    };
   }
 })();

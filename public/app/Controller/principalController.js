@@ -17,7 +17,6 @@ function principalController(
   state,
   sessionStorage
 ) {
-  console.log(typeof sessionStorage.usuario);
   if (sessionStorage.usuario != null) {
     $scope.submit = () => {
       if ($scope.form.file.$valid && $scope.file) {
@@ -47,6 +46,47 @@ function principalController(
           );
         }
       );
+    };
+    $scope.datos = () => {
+      $('#show4').modal('show');
+      DataBaseService.documentos()
+        .then(result => {
+          $scope.array = result.data;
+        })
+        .catch(err => {});
+      DataBaseService.Getequipos()
+        .then(result => {
+          $scope.equipo = result.data;
+        })
+        .catch(err => {});
+      DataBaseService.GetRolPosicion()
+        .then(result => {
+          $scope.posicion = result.data;
+        })
+        .catch(err => {});
+    };
+    $scope.AddJugador = () => {
+      DataBaseService.AddJugador($scope.jugador)
+        .then(result => {
+          toastr.success(result.data.message);
+        })
+        .catch(err => {
+          toastr.error(err.data.message);
+        });
+    };
+
+    $scope.partidos = () => {
+      DataBaseService.RegisterPartido()
+        .then(result => {
+          console.log(result);
+          if (result.data.show) {
+            $('#show2').modal('show');
+          } else {
+            $('#show2').modal('hide');
+            toastr.warning(result.data.message);
+          }
+        })
+        .catch(err => {});
     };
   } else {
     state.go('login');
