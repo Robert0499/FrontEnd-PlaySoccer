@@ -87,10 +87,38 @@ function principalController(
           }
         })
         .catch(err => {});
+      DataBaseService.GetGrupo()
+        .then(result => {
+          $scope.array = result.data;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     };
   } else {
     state.go('login');
   }
+
+  $scope.change = () => {
+    DataBaseService.GetGrupoEquipo($scope.select)
+      .then(result => {
+        $scope.equipo = result.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    //DataBaseService.then(result => {}).catch(err => {});
+  };
+  $scope.validacion = algo => {
+    if ($scope.select1 == $scope.select2) {
+      toastr.warning('Los dos equipos no pueden ser iguales!');
+      $scope.select1 = '';
+      $scope.select2 = '';
+    }
+    if (algo == 'equipo1') {
+    } else {
+    }
+  };
 
   $scope.reset = () => {
     sessionStorage.$reset();
