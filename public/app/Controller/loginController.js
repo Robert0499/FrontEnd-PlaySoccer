@@ -14,7 +14,13 @@ function loginController($scope, DataBaseService, state, sessionStorage) {
           DataBaseService.login($scope.usuario)
             .then(result => {
               sessionStorage.usuario = result.data.data.usu_token;
-              state.go('principal');
+              if (result.data.data.fk_id_rol == 1) {
+                state.go('dashboard');
+              } else if (result.data.data.fk_id_rol == 2) {
+                state.go('principal');
+              } else {
+                toastr.error('El rol no existe');
+              }
             })
             .catch(err => {
               // console.log(err.status);

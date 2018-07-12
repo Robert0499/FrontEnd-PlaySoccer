@@ -53,13 +53,13 @@
 								<div class="card-body">
 									<form>
 										<div class="form-group">
-											<button type="button" class="form-control btn btn" style="background: #E8E8E6" data-toggle="modal" data-target="#show2">Registrar Partidos</button>
+											<button type="button" class="form-control btn btn" style="background: #E8E8E6" ng-click="partidos()">Registrar Partidos</button>
 										</div>
 										<div class="form-group">
 											<button type="button" class="form-control btn" style="background: #E8E8E6;" data-toggle="modal" data-target="#show3">Registrar Equipos</button>
 										</div>
 										<div class="form-group">
-											<button type="button" class="form-control btn" style="background: #E8E8E6" data-toggle="modal" data-target="#show4">Registrar Jugadores</button>
+											<button type="button" class="form-control btn" style="background: #E8E8E6" ng-click="datos()">Registrar Jugadores</button>
 										</div>
 									</form>
 								</div>
@@ -186,54 +186,57 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form ng-submit="AddJugador()">
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label>Nombres</label>
-							<input class="form-control" type="text" placeholder="Nombre Completo" required>
+							<input class="form-control" type="text" placeholder="Nombre Completo" required ng-model="jugador.nombre">
 						</div>
 						<div class="form-group col-md-6">
 							<label>Primer Apellido</label>
-							<input type="text" class="form-control" placeholder="Primer Apelldio">
+							<input type="text" class="form-control" placeholder="Primer Apelldio" ng-model="jugador.primer_apellido">
 						</div>
 						<div class="form-group col-md-6">
 							<label>Segundo Apellido</label>
-							<input type="text" class="form-control" placeholder="Segundo Apelldio">
+							<input type="text" class="form-control" placeholder="Segundo Apelldio" ng-model="jugador.segundo_apellido">
 						</div>
 						<div class="form-group col-md-6">
 							<label>Tipo documento</label>
-							<select class="form-control">
-								<option hidden value="">Seleccione</option>
-								<option></option>
+							<select class="form-control" required ng-model="jugador.fk_id_tpd">
+								<option hidden value="">Seleccione el tipo de documento</option>
+								<option ng-repeat="date in array" value="{{date.id}}">{{date.nombre}}</option>
 							</select>
 						</div>
 						<div class="form-group col-md-6">
 							<label>Numero de documento</label>
-							<input type="number" class="form-control" placeholder="Documento">
+							<input type="number" class="form-control" placeholder="Documento" ng-model="jugador.numero_documento">
 						</div>
 						<div class="form-group col-md-6">
 							<label>Posicion</label>
-							<select class="form-control">
+							<select class="form-control" required ng-model="jugador.fk_id_rol_posicion">
 								<option hidden value="">Seleccione</option>
+								<option ng-repeat="date in posicion" value="{{date.id}}">{{date.nombre}}</option>
 							</select>
 						</div>
 						<div class="form-group col-md-6">
 							<label>Numero camiseta</label>
-							<input type="number" class="form-control" placeholder="Documento">
+							<input type="number" class="form-control" placeholder="Documento" ng-model="jugador.numero_camiseta" required>
 						</div>
 						<div class="form-group col-md-6">
 							<label>Equipo</label>
-							<select class="form-control">
+							<select class="form-control" required ng-model="jugador.fk_id_equipo">
 								<option hidden value="">Seleccione</option>
+								<option ng-repeat="date in equipo" value="{{date.id}}">{{date.nombre}}</option>
 							</select>
 						</div>
 					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+						<button type="submit" class="btn btn-success">Registrar</button>
+					</div>
 				</form>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-				<button type="submit" class="btn btn-success" data-dismiss="modal">Registrar</button>
-			</div>
+
 		</div>
 	</div>
 </div>
