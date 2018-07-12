@@ -3,9 +3,9 @@
 		<div class="col-12">
 			<div class="text-center">
 				<div class="d-flex bd-highlight mb-3">
-					<button class="btn btn-light p-2 flex-fill letra">Partidos</button>
+					<button class="btn btn-light p-2 flex-fill letra" ng-click="inicioInvitado()">Partidos</button>
 					<button class="btn btn-light p-2 flex-fill letra">Resultados</button>
-					<button class="btn btn-light p-2 flex-fill letra">Equipos</button>
+					<button class="btn btn-light p-2 flex-fill letra" ng-click="equipos()">Equipos</button>
 					<button class="btn btn-light p-2 flex-fill letra">Posiciones</button>
 				</div>
 				<h2>Partidos hoy</h2>
@@ -16,7 +16,7 @@
 						<div class="p-2 bd-highlight">Partido 1</div>
 					</div>
 				</div>
-				<div class="card border border-dark" ng-click="infoPartido()">
+				<div class="card border border-dark cursor" ng-click="infoPartido()">
 					<div class="d-flex bd-highlight">
 						<div class="p-2 flex-fill bd-highlight">Colombia
 							<i class="fa fa-flag fa-2x"></i>

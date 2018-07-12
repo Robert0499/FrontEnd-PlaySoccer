@@ -31,5 +31,7 @@
     state($stateProvider, 'infoPartido');
     state($stateProvider, 'login');
     state($stateProvider, 'principal');
+    state($stateProvider, 'equipos');
+    state($stateProvider, 'equipo');
   }
 })();
