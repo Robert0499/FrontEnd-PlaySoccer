@@ -16,3 +16,6 @@ angular.module('playsoccer').constant('state', (stateprovider, name) => {
     }
   });
 });
+angular
+  .module('playsoccer')
+  .constant('host', 'http://10.72.132.79/api-playsoccer/public/api/');
