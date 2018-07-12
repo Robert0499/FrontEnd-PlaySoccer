@@ -19,4 +19,7 @@ angular.module('playsoccer').constant('state', (stateprovider, name) => {
 angular
   .module('playsoccer')
   .constant('host', 'http://10.72.132.105/api-playsoccer/public/api/');
+angular
+  .module('playsoccer')
+  .constant('img', 'http://10.72.132.105/api-playsoccer/');
 // equipo rolposicion

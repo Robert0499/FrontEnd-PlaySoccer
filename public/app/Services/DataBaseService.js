@@ -18,5 +18,11 @@
     this.Getequipos = () => {
       return $http.get(host + 'equipo');
     };
+    this.getJugadores = id => {
+      return $http({
+        method: 'GET',
+        url: host + 'jugadores/equipo?id=' + id
+      });
+    };
   }
 })();

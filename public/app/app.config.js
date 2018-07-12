@@ -33,5 +33,6 @@
     state($stateProvider, 'principal');
     state($stateProvider, 'equipos');
     state($stateProvider, 'equipo');
+    state($stateProvider, 'posiciones');
   }
 })();
