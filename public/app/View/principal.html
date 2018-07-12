@@ -90,20 +90,35 @@
 				<form>
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<label>Equipos</label>
-							<select class="form-control" required>
+							<label>Grupos</label>
+							<select class="form-control" ng-model="select" required ng-change="change()">
 								<option hidden value="">Seleccione</option>
-								<option>RealMadrid</option>
+								<option ng-repeat="date in array" value="{{date.id}}">{{date.nombre}}</option>
 							</select>
 						</div>
 
 						<div class="form-group col-md-6">
-							<label>Equipo1</label>
+							<label>Equipo: </label>
+							<select class="form-control" required ng-change="validacion('equipo1')" ng-model="select1">
+								<option hidden value="">Seleccione</option>
+								<option ng-repeat="date in equipo" value="{{date.id}}">{{date.nombre}}</option>
+							</select>
+						</div>
+						<div class="form-group col-md-6">
+							<label>Equipo: </label>
+							<select class="form-control" required ng-change="validacion('equipo1')" ng-model="select2">
+								<option hidden value="">Seleccione</option>
+								<option ng-repeat="date in equipo" value="{{date.id}}">{{date.nombre}}</option>
+							</select>
+						</div>
+
+						<div class="form-group col-md-6">
+							<label>Goles</label>
 							<input type="number" placeholder="goles marcados" class="form-control" required>
 						</div>
 
 						<div class="form-group col-md-6">
-							<label>Equipo2</label>
+							<label>Goles</label>
 							<input type="number" placeholder="goles marcados" class="form-control" required>
 						</div>
 						<div class="form-group col-md-6">
