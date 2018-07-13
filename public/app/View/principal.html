@@ -106,7 +106,7 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label>Equipo: </label>
-							<select class="form-control" required ng-change="validacion('equipo1')" ng-model="select2">
+							<select class="form-control" required ng-change="validacion('equipo2')" ng-model="select2">
 								<option hidden value="">Seleccione</option>
 								<option ng-repeat="date in equipo" value="{{date.id}}">{{date.nombre}}</option>
 							</select>
@@ -114,45 +114,56 @@
 
 						<div class="form-group col-md-6">
 							<label>Goles</label>
-							<input type="number" placeholder="goles marcados" class="form-control" required>
+							<input type="number" placeholder="goles marcados" class="form-control" required disabled>
 						</div>
 
 						<div class="form-group col-md-6">
 							<label>Goles</label>
-							<input type="number" placeholder="goles marcados" class="form-control" required>
+							<input type="number" placeholder="goles marcados" class="form-control" required disabled>
 						</div>
 						<div class="form-group col-md-6">
 							<label>Jugador</label>
-							<select class="form-control" required>
+							<select class="form-control" required ng-model="jugador1">
 								<option hidden value="">Seleccione</option>
-								<option>Pepito</option>
+								<option ng-repeat="date in jugadores1" value="{{date.id}}">{{date.nombre + ' ' + date.primer_apellido}}</option>
 							</select>
 						</div>
 						<div class="form-group col-md-6">
 							<label>Jugador</label>
-							<select class="form-control" required>
+							<select class="form-control" required ng-model="jugador2">
 								<option hidden value="">Seleccione</option>
-								<option>Pepito2</option>
+								<option ng-repeat="date in jugadores2" value="{{date.id}}">{{date.nombre + ' ' + date.primer_apellido}}</option>
 							</select>
 						</div>
 						<div class="col-3">
-							<button class="btn btn-warning btn-block">Amarilla</button>
+							<button class="btn btn-warning btn-block" ng-click="YellowCard('equipo1')">Amarilla</button>
 						</div>
 						<div class="col-3">
-							<button class="btn btn-danger btn-block">Roja</button>
+							<button class="btn btn-danger btn-block" ng-click="RedCard('equipo1')">Roja</button>
+						</div>
+
+						<div class="col-3">
+							<button class="btn btn-warning btn-block" ng-click="YellowCard('equipo2')">Amarilla</button>
 						</div>
 						<div class="col-3">
-							<button class="btn btn-warning btn-block">Amarilla</button>
+							<button class="btn btn-danger btn-block" ng-click="RedCard('equipo2')">Roja</button>
 						</div>
-						<div class="col-3">
-							<button class="btn btn-danger btn-block">Roja</button>
+						<div class="from-group col-md-6">
+							<button type="button" class="btn btn-light btn-block mt-1" ng-click="goles('equipo1')">
+								<i class="fa fa-soccer-ball-o fa-2x"></i>
+							</button>
+						</div>
+						<div class="from-group col-md-6">
+							<button type="button" class="btn btn-light btn-block mt-1" ng-click="goles('equipo2')">
+								<i class="fa fa-soccer-ball-o fa-2x"></i>
+							</button>
 						</div>
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-				<button type="submit" class="btn btn-success" data-dismiss="modal">Crear</button>
+				<button type="submit" class="btn btn-success" ng-click="RegistrarPartidos()">Crear</button>
 			</div>
 		</div>
 	</div>

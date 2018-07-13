@@ -37,7 +37,7 @@ function principalController(
           );
         },
         function(resp) {
-          console.log('Error status: ' + resp.status);
+          toastr.error(resp.data.message);
         },
         function(evt) {
           var progressPercentage = parseInt((100.0 * evt.loaded) / evt.total);
@@ -78,7 +78,7 @@ function principalController(
     $scope.partidos = () => {
       DataBaseService.RegisterPartido()
         .then(result => {
-          console.log(result);
+          /*console.log(result);*/
           if (result.data.show) {
             $('#show2').modal('show');
           } else {
@@ -116,7 +116,83 @@ function principalController(
       $scope.select2 = '';
     }
     if (algo == 'equipo1') {
+      DataBaseService.getJugadores($scope.select1)
+        .then(result => {
+          /*console.log(result);*/
+          $scope.jugadores1 = result.data;
+        })
+        .catch(err => {});
     } else {
+      DataBaseService.getJugadores($scope.select2)
+        .then(result => {
+          $scope.jugadores2 = result.data;
+        })
+        .catch(err => {});
+    }
+  };
+  $scope.objetos = [];
+  $scope.goles = algo => {
+    if (algo == 'equipo1') {
+      $scope.objetos.push({
+        jugador: $scope.jugador1,
+        gol: true,
+        equipo: $scope.select1
+      });
+    } else if (algo == 'equipo2') {
+      $scope.objetos.push({
+        jugador: $scope.jugador2,
+        gol: true,
+        equipo: $scope.select2
+      });
+    }
+    /*DataBaseService.SenID({ id: $scope.select1 })
+      .then(result => {
+        toastr.success(result.data.message);
+      })
+      .catch(err => {
+        toastr.success(err.data.erros);
+      });*/
+  };
+  $scope.RegistrarPartidos = () => {
+    DataBaseService.RegisterPartidos({
+      objetos: $scope.objetos,
+      equipo1: $scope.select1,
+      equipo2: $scope.select2
+    })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {});
+  };
+  $scope.YellowCard = algo => {
+    if (algo == 'equipo1') {
+      $scope.objetos.push({
+        jugador: $scope.jugador1,
+        tarjeta_amarilla: true,
+        equipo: $scope.select1
+      });
+    } else if (algo == 'equipo2') {
+      $scope.objetos.push({
+        jugador: $scope.jugador2,
+        tarjeta_amarilla: true,
+        equipo: $scope.select2
+      });
+    }
+  };
+
+  $scope.RedCard = algo => {
+    if (algo == 'equipo1') {
+      $scope.objetos.push({
+        jugador: $scope.jugador1,
+        tarjeta_roja: true,
+        equipo: $scope.select1
+      });
+    } else if (algo == 'equipo2') {
+      $scope.objetos.push({
+        jugador: $scope.jugador2,
+        tarjeta_roja: true,
+        equipo: $scope.select2
+      });
     }
   };
 

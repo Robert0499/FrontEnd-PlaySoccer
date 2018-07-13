@@ -39,4 +39,11 @@ function DataBaseService($http, host, $httpParamSerializerJQLike) {
       url: host + 'equipos/grupo?id=' + id
     });
   };
+  this.SenID = id => {
+    return $http.post(host + 'golequipo', $httpParamSerializerJQLike(id));
+  };
+
+  this.RegisterPartidos = data => {
+    return $http.post(host + 'partido', $httpParamSerializerJQLike(data));
+  };
 }
