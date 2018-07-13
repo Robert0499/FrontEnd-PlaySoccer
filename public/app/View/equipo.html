@@ -1,27 +1,27 @@
-<div class="container">
+<div class="container invi">
 	<div class="row">
 		<div class="col-12 text-center">
 			<div class="d-flex bd-highlight mb-3">
 				<button class="btn btn-light p-2 flex-fill letra" ng-click="inicioInvitado()">Partidos</button>
 				<button class="btn btn-light p-2 flex-fill letra">Resultados</button>
-				<button class="btn btn-light p-2 flex-fill letra" ng-click="equipos()">Equipos</button>
+				<button class="btn btn-light p-2 flex-fill letra active" ng-click="equipos()">Equipos</button>
 				<button class="btn btn-light p-2 flex-fill letra" ng-click="posiciones()">Posiciones</button>
 			</div>
-			<div>
+			<div class="blanco">
 				<img src="{{equipo.escudo}}" height="150" width="150" class="mt-3">
 				<h5>{{equipo.nombre}}</h5>
 			</div>
-			<div class="row">
+			<div class="row blanco">
 				<div class="col-6">
 					<h3>Jugador</h3>
 					<ul class="list-group">
-						<li class="list-group-item letra" ng-repeat="jugadores in jugadores">{{jugadores.nombre}}</li>
+						<li style="background-color: #081c3d ;color: white" class="list-group-item letra nombres" ng-repeat="jugadores in jugadores">{{jugadores.nombre}} {{ jugadores.primer_apellido}}</li>
 					</ul>
 				</div>
 				<div class="col-6">
 					<h3>Posicion</h3>
 					<ul class="list-group">
-						<li class="list-group-item letra" ng-repeat="posicion in jugadores">{{posicion.posiciones}}</li>
+						<li style="background-color: #081c3d ;color: white" class="list-group-item  nombres" ng-repeat="posicion in jugadores">{{posicion.posiciones}}</li>
 					</ul>
 				</div>
 			</div>

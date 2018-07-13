@@ -17,3 +17,36 @@
 .noborder {
   border: 0px;
 }
+.background {
+  height: 100vh;
+  background-image: url(../img/campo2.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media handheld, only screen and (max-width: 1024px) {
+  .session {
+    display: none;
+  }
+}
+.invi {
+  background-image: url(../img/cesped1.jpg);
+}
+.nombres {
+  height: 60px;
+}
+.colores {
+  background-color: #081c3d;
+  color: white;
+}
+.btn-light {
+  background-color: #081c3d;
+  color: white;
+  border-color: transparent;
+}
+.list-group-item {
+  background-color: transparent;
+}
+.blanco {
+  color: white;
+}
