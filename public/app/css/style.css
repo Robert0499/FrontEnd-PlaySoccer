@@ -29,6 +29,20 @@
     display: none;
   }
 }
+.login {
+  height: 100vh;
+}
+.card1 {
+  background-color: rgb(64, 85, 88, 0.4);
+  border-color: transparent;
+}
+.card2 {
+  background-color: rgb(64, 85, 88, 0.8);
+  border-color: transparent;
+}
+.newcolor {
+  color: rgba(188, 238, 255, 0.6);
+}
 .invi {
   background-image: url(../img/cesped1.jpg);
 }
