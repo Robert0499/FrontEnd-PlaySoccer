@@ -23,6 +23,9 @@ function equipoController($scope, $state, $sessionStorage, DataBaseService) {
   $scope.posiciones = function() {
     $state.go('posiciones');
   };
+  $scope.resultados = () => {
+    $state.go('resultados');
+  };
   $scope.equiposs = $sessionStorage.equiposs;
   $scope.equipo = {};
   $scope.equiposs.forEach(e => {

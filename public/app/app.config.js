@@ -36,5 +36,6 @@
     state($stateProvider, 'posiciones');
     state($stateProvider, 'OctavosFinal');
     state($stateProvider, 'dashboard');
+    state($stateProvider, 'resultados');
   }
 })();
