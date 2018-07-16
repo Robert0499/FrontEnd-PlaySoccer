@@ -160,9 +160,11 @@ function principalController(
       equipo2: $scope.select2
     })
       .then(result => {
-        console.log(result);
+        toastr.success(result.data.message);
       })
-      .catch(err => {});
+      .catch(err => {
+        toastr.error(err.data.message);
+      });
   };
   $scope.YellowCard = algo => {
     if (algo == 'equipo1') {
