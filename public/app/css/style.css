@@ -40,6 +40,10 @@
   background-color: rgb(64, 85, 88, 0.8);
   border-color: transparent;
 }
+.card3 {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: transparent;
+}
 .newcolor {
   color: rgba(188, 238, 255, 0.6);
 }
@@ -53,7 +57,11 @@
   background-color: #081c3d;
   color: white;
 }
-.btn-light {
+.back {
+  height: 45px;
+  width: 45px;
+}
+.darkblue {
   background-color: #081c3d;
   color: white;
   border-color: transparent;

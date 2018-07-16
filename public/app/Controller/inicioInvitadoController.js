@@ -15,4 +15,7 @@ function inicioInvitadoController($scope, $state) {
   $scope.posiciones = function() {
     $state.go('posiciones');
   };
+  $scope.invitado = function() {
+    $state.go('invitado');
+  };
 }
