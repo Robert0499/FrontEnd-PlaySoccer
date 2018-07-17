@@ -26,6 +26,10 @@ function infoPartidoController($scope, $state) {
   $scope.posiciones = function() {
     $state.go('posiciones');
   };
+
+  $scope.resultados = function() {
+    $state.go('resultados');
+  };
   $scope.jugadoresT1 = [
     {
       nombre: 'David Ospina',

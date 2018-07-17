@@ -131,14 +131,18 @@ function principalController(
     }
   };
   $scope.objetos = [];
+  $scope.gol1 = 0;
+  $scope.gol2 = 0;
   $scope.goles = algo => {
     if (algo == 'equipo1') {
+      $scope.gol1++;
       $scope.objetos.push({
         jugador: $scope.jugador1,
         gol: true,
         equipo: $scope.select1
       });
     } else if (algo == 'equipo2') {
+      $scope.gol2++;
       $scope.objetos.push({
         jugador: $scope.jugador2,
         gol: true,
@@ -152,11 +156,14 @@ function principalController(
       .catch(err => {
         toastr.success(err.data.erros);
       });*/
+    toastr.info('Goooool');
   };
   $scope.RegistrarPartidos = () => {
     DataBaseService.RegisterPartidos({
       objetos: $scope.objetos,
       equipo1: $scope.select1,
+      goles_visitante: $scope.gol1,
+      goles_local: $scope.gol2,
       equipo2: $scope.select2
     })
       .then(result => {
@@ -180,6 +187,7 @@ function principalController(
         equipo: $scope.select2
       });
     }
+    toastr.warning('Tarjeta Amarilla');
   };
 
   $scope.RedCard = algo => {
@@ -196,6 +204,7 @@ function principalController(
         equipo: $scope.select2
       });
     }
+    toastr.error('Tarjeta Roja');
   };
 
   $scope.reset = () => {

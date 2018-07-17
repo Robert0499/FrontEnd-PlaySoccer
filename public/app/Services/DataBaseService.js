@@ -46,4 +46,8 @@ function DataBaseService($http, host, $httpParamSerializerJQLike) {
   this.RegisterPartidos = data => {
     return $http.post(host + 'partido', $httpParamSerializerJQLike(data));
   };
+
+  this.GetPartidos = () => {
+    return $http.get(host + 'partido');
+  };
 }
