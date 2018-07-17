@@ -12,7 +12,7 @@ function posicionesController($scope, $state, DataBaseService) {
   $scope.posiciones = function() {
     $state.go('posiciones');
   };
-  $scope.resultados = function() {
+  $scope.resultados = () => {
     $state.go('resultados');
   };
 }
