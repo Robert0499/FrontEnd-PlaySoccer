@@ -8,7 +8,11 @@
 				<button class="btn btn-light p-2 flex-fill letra darkblue" ng-click="posiciones()">Posiciones</button>
 			</div>
 			<i class="fa fa-soccer-ball-o fa-5x blanco"></i>
-			<h1 class="blanco">Equipos</h1>
+			<div class="d-flex justify-content-between mb-3">
+				<button type=" button " class=" btn btn-danger rounded-circle " ng-click="invitado() "><i class="fa fa-angle-left fa-2x "></i></button>
+				<h2 class="blanco ">Equipos</h2>
+				<div class="invisible">fidesty</div>
+			</div>
 			<div class="row mt-3">
 				<div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6 padding" ng-repeat="date in equipo">
 					<div ng-click="infoEquipo(date.id)" class="card border border-dark cursor d-flex justify-content-center align-items-center"

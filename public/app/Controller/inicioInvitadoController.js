@@ -15,7 +15,7 @@ function inicioInvitadoController($scope, $state) {
   $scope.posiciones = function() {
     $state.go('posiciones');
   };
-  $scope.invitado = function() {
+  $scope.invitado = function() {4
     $state.go('invitado');
   };
   $scope.resultados = () => {
