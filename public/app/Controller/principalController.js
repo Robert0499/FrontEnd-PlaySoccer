@@ -139,6 +139,8 @@ function principalController(
       $scope.objetos.push({
         jugador: $scope.jugador1,
         gol: true,
+        tarjeta_amarilla: false,
+        tarjeta_roja: false,
         equipo: $scope.select1
       });
     } else if (algo == 'equipo2') {
@@ -146,6 +148,8 @@ function principalController(
       $scope.objetos.push({
         jugador: $scope.jugador2,
         gol: true,
+        tarjeta_amarilla: false,
+        tarjeta_roja: false,
         equipo: $scope.select2
       });
     }
@@ -162,8 +166,8 @@ function principalController(
     DataBaseService.RegisterPartidos({
       objetos: $scope.objetos,
       equipo1: $scope.select1,
-      goles_visitante: $scope.gol1,
-      goles_local: $scope.gol2,
+      goles_visitante: $scope.gol2,
+      goles_local: $scope.gol1,
       equipo2: $scope.select2
     })
       .then(result => {
@@ -178,12 +182,16 @@ function principalController(
       $scope.objetos.push({
         jugador: $scope.jugador1,
         tarjeta_amarilla: true,
+        tarjeta_roja: false,
+        gol: false,
         equipo: $scope.select1
       });
     } else if (algo == 'equipo2') {
       $scope.objetos.push({
         jugador: $scope.jugador2,
         tarjeta_amarilla: true,
+        tarjeta_roja: false,
+        gol: false,
         equipo: $scope.select2
       });
     }
@@ -194,13 +202,17 @@ function principalController(
     if (algo == 'equipo1') {
       $scope.objetos.push({
         jugador: $scope.jugador1,
+        tarjeta_amarilla: false,
         tarjeta_roja: true,
+        gol: false,
         equipo: $scope.select1
       });
     } else if (algo == 'equipo2') {
       $scope.objetos.push({
         jugador: $scope.jugador2,
         tarjeta_roja: true,
+        tarjeta_amarilla: false,
+        gol: false,
         equipo: $scope.select2
       });
     }
