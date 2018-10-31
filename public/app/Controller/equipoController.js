@@ -5,6 +5,7 @@ equipoController.$inject = [
   '$scope',
   '$state',
   '$sessionStorage',
+
   'DataBaseService'
 ];
 function equipoController($scope, $state, $sessionStorage, DataBaseService) {
